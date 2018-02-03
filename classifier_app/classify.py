@@ -1,6 +1,6 @@
 import math
 import numpy as np
-from .uservectors import *
+from uservectors import *
 
 import twitter
 
@@ -60,7 +60,7 @@ def binary_search(key,l):
         else:
             high_bound = check
 
-common_words = ['and','the','is','to','of','in','a','in','that','have','i','it']
+common_words = [' and',' the',' is',' to',' of',' in',' a',' in',' that',' have',' i',' it']
 
 def preprocess(text):
     words = re.sub(r'[\*~\^@!\?\.,]',r'',text.lower())
