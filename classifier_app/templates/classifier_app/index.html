@@ -14,10 +14,29 @@
   </head>
 
   <body>
+    <!-- Tab links -->
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'handle')">Enter handle</button>
+      <button class="tablinks" onclick="openCity(event, 'tweet')">Enter tweet</button>
+    </div>
+
+    <!-- Tab content -->
+    <div id="handle" class="tabcontent">
+      <input id="twitter-input" class="centered" placeholder="@Your-Twitter-Handle">
+    </div>
+
+    <div id="tweet" class="tabcontent">
+      <input id="twitter-input" class="centered" placeholder="Please enter a sample tweet.">
+    </div>
+
+
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <input id="twitter-input" class="centered" placeholder="@your Twitter handle">
-        <button class="pure-button centered" id="twitter-input-button">Match your celebrity</button>
+        <!--
+        <input id="twitter-input" class="centered" placeholder="@Enter_your_Twitter_handle">
+        <textarea class="centered" placeholder="or enter a sample tweet here:"> </textarea> 
+        -->
+        <button class="pure-button centered" id="twitter-input-button">Match your celebrity </button>
       </div>
     </div>
 
