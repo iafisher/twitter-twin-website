@@ -35,21 +35,19 @@ body {
   font-size: 2em;
   margin-right: 2px;
   margin-left: 2px;
+  color: white;
 }
 
 .coefficient-green {
-  background-color: lightgreen;
-  color: darkgreen;
+  background-color: rgb(28, 184, 65);
 }
 
 .coefficient-yellow {
-  background-color: #eff7a0;
-  color: #80891a;
+  background-color: rgb(223, 117, 20);
 }
 
 .coefficient-red {
-  background-color: #f4424b;
-  color: maroon;
+  background-color: rgb(202, 60, 60);
 }
 
 .twitter-img {
