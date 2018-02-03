@@ -32,9 +32,22 @@ function displayCoefficients(data) {
     var coefficients = data['coefficients'];
     // Remove any coefficients that might already be there.
     $(".coefficient").detach();
+    // Reset background color.
+    $(".img-box").css("backgroundColor", "transparent");
+    // Reset the opacities.
+    $(".img-box img").css("filter", "opacity(100%)");
+    $(".coefficient").css("filter", "opacity(100%)");
     for (var i = 0; i < coefficients.length; i++) {
+        var imgElem = $("#img-row div:nth-child(" + (i+1) + ")");
         var elem = makeCoefficientElement(coefficients, i);
-        $("#img-row div:nth-child(" + (i+1) + ")").append(elem);
+        imgElem.append(elem);
+        if (isMax(coefficients, i)) {
+            imgElem.css("backgroundColor", "lightgray");
+        } else {
+            // Fade out the image and the coefficient bar.
+            imgElem.children("img").css("filter", "opacity(50%)");
+            imgElem.children(".coefficient").css("filter", "opacity(50%)");
+        }
     }
 }
 

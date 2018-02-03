@@ -33,7 +33,7 @@ body {
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 /* Change background color of buttons on hover */
@@ -89,7 +89,9 @@ body {
   margin-right: 2px;
   margin-left: 2px;
   margin-top: 15px;
+  margin-bottom: 40px;
   color: white;
+  transition: 0.2s;
 }
 
 .coefficient-green {
@@ -151,4 +153,12 @@ body {
   #input-div {
     width: 90%;
   }
+}
+
+.img-box {
+  transition: 0.5s;
+}
+
+.img-box img {
+  transition: 0.5s;
 }
