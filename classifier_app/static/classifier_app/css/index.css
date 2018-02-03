@@ -56,7 +56,7 @@ textarea {
   padding: 8px;
 }
 
-#twitter-input-button {
+.twitter-input-button {
   display: block;
   margin-top: 5px;
 }
@@ -105,6 +105,15 @@ textarea {
   text-align: center;
   margin: -30px 5px 2px 5px;
   color: gray;
+}
+
+.caption a {
+  color: gray;
+  /*text-decoration: none;*/
+}
+
+.caption a:hover {
+    background-color: #ddd;
 }
 
 .subcaption {

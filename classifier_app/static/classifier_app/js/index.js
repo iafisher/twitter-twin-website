@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#twitter-input-button").click(function () {
+    $("#handle-input").click(function () {
         var url = '/ajax_classify/' + $("#twitter-input").val(); $.get(url, function (data) {
             var coefficients = data['coefficients'];
             for (var i = 0; i < coefficients.length; i++) {
