@@ -12,7 +12,13 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
-from .secret_settings import *
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = '-$aaz#!srn2ys2@ylx$m+x82hnn=c&2%&f69vs7i)l@(aw7z_h'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = []
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
