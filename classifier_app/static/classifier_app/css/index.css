@@ -4,6 +4,7 @@ body {
 
 #twitter-input {
   display: block;
+  text-align: center;
   margin-bottom: 10px;
   height: 30px;
   padding: 3px;
@@ -37,4 +38,21 @@ body {
 
 #img-row {
   margin-top: 50px;
+}
+
+/* margin: top right bottom left; */
+
+.caption {
+  font-size: 18px;
+  text-align: center;
+  margin: 2px 5px 2px 5px;
+  color: gray;
+}
+
+.subcaption{
+  font-size: 15px;
+  text-align: center;
+  margin: 2px 5px 2px 5px;
+  color: darkgray;
+
 }

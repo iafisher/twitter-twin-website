@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Tweet Like A Celebrity</title>
-    
+
     <!-- The Pure CSS framework -->
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
 
@@ -22,7 +22,7 @@
   <body>
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <input id="twitter-input" class="centered" placeholder="Your Twitter handle">
+        <input id="twitter-input" class="centered" placeholder="@your Twitter handle">
         <button class="pure-button centered" id="twitter-input-button">Match your celebrity</button>
       </div>
     </div>
@@ -30,18 +30,28 @@
     <div id="img-row" class="pure-g">
       <div class="pure-u-1-5">
         <img class="pure-img twitter-img" src="{% static 'classifier_app/img/trump.jpg' %}">
+        <p class="caption"> Donald Trump </p>
+        <p class="subcaption"> President of the United States </p>
       </div>
       <div class="pure-u-1-5">
         <img class="pure-img twitter-img" src="{% static 'classifier_app/img/rihanna.jpg' %}">
+        <p class="caption"> Rihanna </p>
+        <p class="subcaption"> Singer and activist </p>
       </div>
       <div class="pure-u-1-5">
         <img class="pure-img twitter-img" src="{% static 'classifier_app/img/elon.jpg' %}">
+        <p class="caption"> Elon Musk </p>
+        <p class="subcaption">  CEO of Tesla and SpaceX </p>
       </div>
       <div class="pure-u-1-5">
         <img class="pure-img twitter-img" src="{% static 'classifier_app/img/lebron.jpg' %}">
+        <p class="caption"> LeBron James </p>
+        <p class="subcaption">  Basketball player </p>
       </div>
       <div class="pure-u-1-5">
         <img class="pure-img twitter-img" src="{% static 'classifier_app/img/neil.jpg' %}">
+        <p class="caption"> Neil deGrasse Tyson </p>
+        <p class="subcaption">  Astrophysicist </p>
       </div>
     </div>
   </body>
