@@ -38,7 +38,7 @@ body {
     border-top: none;
 }
 
-#twitter-input {
+#handle-input {
   display: block;
   text-align: center;
   margin-top: 10px;
@@ -48,15 +48,17 @@ body {
   width: 90%;
 }
 
-textarea {
+#tweet-input {
   display: block;
   line-height: 20px;
   width: 90%;
   height: 64px;
   padding: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.twitter-input-button {
+.input-button {
   display: block;
   margin-top: 5px;
 }

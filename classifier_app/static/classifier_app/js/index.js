@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    $("#handle-input").click(function () {
-        var url = '/ajax_classify/' + $("#twitter-input").val(); $.get(url, function (data) {
+    $("#handle-input-button").click(function () {
+        var url = '/ajax_classify/' + $("#handle-input").val(); $.get(url, function (data) {
             var coefficients = data['coefficients'];
             for (var i = 0; i < coefficients.length; i++) {
                 var elem = makeCoefficientElement(coefficients, i);
