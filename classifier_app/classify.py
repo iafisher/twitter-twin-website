@@ -1,6 +1,6 @@
 import math
 import numpy as np
-from uservectors import *
+from .uservectors import *
 
 import twitter
 
