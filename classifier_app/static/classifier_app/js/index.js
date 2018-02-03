@@ -15,7 +15,18 @@ $(document).ready(function () {
         // Twitter usernames cannot be longer than 15 characters.
         var handle = $("#handle-input").val().slice(0, 15);
         var url = '/ajax_classify/' + handle;
+        $(".loader").show();
         $.get(url, displayCoefficients);
+    });
+
+    $("#handle-input").keypress(function (e) {
+        if (e.which === 13) {
+            // Twitter usernames cannot be longer than 15 characters.
+            var handle = $("#handle-input").val().slice(0, 15);
+            var url = '/ajax_classify/' + handle;
+            $(".loader").show();
+            $.get(url, displayCoefficients);
+        }
     });
 
     $("#tweet-input-button").click(function () {
@@ -24,11 +35,20 @@ $(document).ready(function () {
         $.post('/ajax_classify_tweet/', {'tweet': tweet}, displayCoefficients);
     });
 
+    $("#tweet-input").keypress(function (e) {
+        if (e.which === 13) {
+            // Tweets cannot be longer than 280 characters.
+            var tweet = $("#tweet-input").val().slice(0, 280);
+            $.post('/ajax_classify_tweet/', {'tweet': tweet}, displayCoefficients);
+        }
+    });
+
     openTab(null, "handle");
 });
 
 
 function displayCoefficients(data) {
+    $(".loader").hide();
     var coefficients = data['coefficients'];
     // Remove any coefficients that might already be there.
     $(".coefficient").detach();
