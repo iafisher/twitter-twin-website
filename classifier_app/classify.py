@@ -60,7 +60,7 @@ def binary_search(key,l):
         else:
             high_bound = check
 
-common_words = ['and','the','is','to','of','in']
+common_words = ['and','the','is','to','of','in','a','in','that','have','i','it']
 
 def preprocess(text):
     words = re.sub(r'[\*~\^@!\?\.,]',r'',text.lower())
