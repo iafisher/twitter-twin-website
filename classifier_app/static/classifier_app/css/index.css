@@ -30,6 +30,28 @@ body {
   margin: 0 auto;
 }
 
+.coefficient {
+  text-align: center;
+  font-size: 2em;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.coefficient-green {
+  background-color: lightgreen;
+  color: darkgreen;
+}
+
+.coefficient-yellow {
+  background-color: #eff7a0;
+  color: #80891a;
+}
+
+.coefficient-red {
+  background-color: #f4424b;
+  color: maroon;
+}
+
 .twitter-img {
   border-radius: 50%;
   width: 50%;
