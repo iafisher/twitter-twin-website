@@ -35,14 +35,6 @@ $(document).ready(function () {
         $.post('/ajax_classify_tweet/', {'tweet': tweet}, displayCoefficients);
     });
 
-    $("#tweet-input").keypress(function (e) {
-        if (e.which === 13) {
-            // Tweets cannot be longer than 280 characters.
-            var tweet = $("#tweet-input").val().slice(0, 280);
-            $.post('/ajax_classify_tweet/', {'tweet': tweet}, displayCoefficients);
-        }
-    });
-
     openTab(null, "handle");
 });
 

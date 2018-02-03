@@ -109,6 +109,7 @@ def classify(handle):
     return classify_tweet(statuses)
 
 def classify_tweet(string):
+    print(repr(string))
     tweet_vector = tweet2vec(preprocess(string))[:-1]
     similarities = [angle(tweet_vector,user_word_vectors[user]) for user in users]
     maximum = max(similarities)

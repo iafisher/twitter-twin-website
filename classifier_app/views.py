@@ -14,7 +14,7 @@ def ajax_classify(request, handle):
 
 def ajax_classify_tweet(request):
     if request.method == 'POST':
-        tweet = request.POST['tweet'][0]
+        tweet = request.POST['tweet']
         return JsonResponse({'coefficients': classify.classify_tweet(tweet)})
     else:
         return JsonResponse({'coefficients': [0.0, 0.0, 0.0, 0.0]})
