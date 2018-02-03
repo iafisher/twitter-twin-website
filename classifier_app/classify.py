@@ -20,7 +20,7 @@ word_indices = {}
 for i  in range(vocab_size):
     word_indices[knowns[i]] = i
 
-users = ['neiltyson','realDonaldTrump','rihanna','elonmusk','KingJames']
+users = ['realDonaldTrump','rihanna','elonmusk','KingJames','neiltyson']
 
 def get_timeline(username):
     statuses = api.statuses.user_timeline(screen_name = username, tweet_mode = 'extended', count = 200)
@@ -104,8 +104,9 @@ def angle(vec1,vec2):
     return np.arccos(veccos(vec1,vec2))
 
 def classify(handle):
-    statuses = get_timeline(handle)
-    return classify_tweet(' '.join(statuses))
+    statuses = ' '.join(get_timeline(handle))
+    #return statuses
+    return classify_tweet(statuses)
 
 def classify_tweet(string):
     tweet_vector = tweet2vec(preprocess(string))[:-1]
