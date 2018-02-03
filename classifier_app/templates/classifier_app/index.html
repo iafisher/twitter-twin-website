@@ -29,25 +29,25 @@
     {% csrf_token %}
 
     <h1>Twitter Twin</h1>
-    <h3>Find your celebrity twin below.</h3>
+    <h3>Which celebrity are you?</h3>
 
     <div class="pure-g">
       <div class="pure-u-1-1">
         <div id="input-div" class="centered">
           <!-- Tab links -->
           <div class="tab">
-            <button id="tablink-handle" class="tablinks" onclick="openTab(event, 'handle')">Enter handle</button>
-            <button id="tablink-tweet" class="tablinks" onclick="openTab(event, 'tweet')">Enter tweet</button>
+            <button id="tablink-handle" class="tablinks" onclick="openTab(event, 'handle')">Enter Username</button>
+            <button id="tablink-tweet" class="tablinks" onclick="openTab(event, 'tweet')">Enter Tweet</button>
           </div>
 
           <!-- Tab content -->
           <div id="tab-handle" class="tabcontent">
-            <input id="handle-input" class="centered" placeholder="@Your-Twitter-Handle">
+            <input id="handle-input" class="centered" placeholder="@Your-Twitter-Username">
             <button id="handle-input-button" class="pure-button centered input-button">Find your match</button>
           </div>
 
           <div id="tab-tweet" class="tabcontent">
-            <textarea id="tweet-input" class="centered" placeholder="Your sample tweet:"></textarea>
+            <textarea id="tweet-input" class="centered" placeholder="Your sample tweet:" maxlength="280"></textarea>
             <button id="tweet-input-button" class="pure-button centered input-button">Find your match</button>
           </div>
         </div>
@@ -77,7 +77,7 @@
       </div>
       <div class="img-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-5">
         <img alt="Neil deGrasse Tyson" class="pure-img twitter-img" src="{% static 'classifier_app/img/neil.jpg' %}">
-        <p class="caption"><a href="https://twitter.com/neiltyson">Neil Tyson</a></p>
+        <p class="caption"><a href="https://twitter.com/neiltyson">Neil deGrasse Tyson</a></p>
         <p class="subcaption">Astrophysicist</p>
       </div>
     </div>
