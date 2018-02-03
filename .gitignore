@@ -1,0 +1,5 @@
+*.swp
+*~
+__pycache__
+classifier_site/secret_settings.py
+db.sqlite3
