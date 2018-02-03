@@ -39,8 +39,15 @@ $(document).ready(function () {
 });
 
 
+
+
 function displayCoefficients(data) {
     $(".loader").hide();
+    if ($.isEmptyObject(data)) {
+        $("#tweet-input").val("");
+        $("#handle-input").val("");
+        return;
+    }
     var coefficients = data['coefficients'];
     // Remove any coefficients that might already be there.
     $(".coefficient").detach();

@@ -9,12 +9,15 @@ def index(request):
 
 
 def ajax_classify(request, handle):
-    return JsonResponse({'coefficients': classify.classify(handle)})
+    try:
+        return JsonResponse({'coefficients': classify.classify(handle)})
+    except:
+        return JsonResponse({})
 
 
 def ajax_classify_tweet(request):
-    if request.method == 'POST':
+    try:
         tweet = request.POST['tweet']
         return JsonResponse({'coefficients': classify.classify_tweet(tweet)})
-    else:
-        return JsonResponse({'coefficients': [0.0, 0.0, 0.0, 0.0]})
+    except:
+        return JsonResponse({})
