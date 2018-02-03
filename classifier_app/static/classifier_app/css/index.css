@@ -41,30 +41,19 @@ body {
 #twitter-input {
   display: block;
   text-align: center;
+  margin-top: 10px;
   margin-bottom: 10px;
   height: 30px;
   padding: 3px;
+  width: 90%;
 }
 
 textarea {
   display: block;
   line-height: 20px;
-  font-size: 14px;
-  width: 467px;
+  width: 90%;
   height: 64px;
   padding: 8px;
-}
-
-@media screen and (min-width: 450px) {
-  #twitter-input {
-    width: 400px;
-  }
-}
-
-@media screen and (max-width: 449px) {
-  #twitter-input {
-    width: 90%;
-  }
 }
 
 #twitter-input-button {
@@ -115,9 +104,21 @@ textarea {
   color: gray;
 }
 
-.subcaption{
+.subcaption {
   font-size: 15px;
   text-align: center;
   margin: 2px 5px 2px 5px;
   color: darkgray;
+}
+
+@media screen and (min-width: 490px) {
+  #input-div {
+    width: 480px;
+  }
+}
+
+@media screen and (max-width: 489px) {
+  #input-div {
+    width: 90%;
+  }
 }

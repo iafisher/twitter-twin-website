@@ -1,7 +1,6 @@
 $(document).ready(function () {
     $("#twitter-input-button").click(function () {
-        var url = '/ajax_classify/' + $("#twitter-input").val();
-        $.get(url, function (data) {
+        var url = '/ajax_classify/' + $("#twitter-input").val(); $.get(url, function (data) {
             var coefficients = data['coefficients'];
             for (var i = 0; i < coefficients.length; i++) {
                 var elem = makeCoefficientElement(coefficients, i);
@@ -10,6 +9,8 @@ $(document).ready(function () {
         });
 
     });
+
+    openTab(null, "handle");
 });
 
 
@@ -34,4 +35,12 @@ function isMax(coefficients, i) {
         }
     }
     return true;
+}
+
+
+function openTab(evt, tabName) {
+    $(".tabcontent").hide();
+    $(".tablinks").removeClass("active");
+    $("#tablink-" + tabName).addClass("active");
+    $("#tab-" + tabName).show().addClass("active");
 }
