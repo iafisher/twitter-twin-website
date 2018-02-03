@@ -104,3 +104,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'classifier_app', 'static')
+
+# Database
+# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        # Absolute path because the BASE_DIR variable is not available in this module
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
