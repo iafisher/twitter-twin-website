@@ -1,6 +1,6 @@
 import math
 import numpy as np
-from .uservectors import *
+from uservectors import *
 
 import twitter
 
@@ -60,8 +60,13 @@ def binary_search(key,l):
         else:
             high_bound = check
 
+common_words = ['and','the','is','to','of','in']
+
 def preprocess(text):
-    return re.sub(r'[\*~\^@!\?\.,]',r'',text.lower()).split()
+    words = re.sub(r'[\*~\^@!\?\.,]',r'',text.lower())
+    for common_word in common_words:
+        words = words.replace(common_word,'')
+    return words.split()
 
 def is_known(word):
     return binary_search(word,knowns)
