@@ -1,21 +1,46 @@
 $(document).ready(function () {
-    $("#handle-input-button").click(function () {
-        var url = '/ajax_classify/' + $("#handle-input").val(); $.get(url, function (data) {
-            var coefficients = data['coefficients'];
-            for (var i = 0; i < coefficients.length; i++) {
-                var elem = makeCoefficientElement(coefficients, i);
-                $("#img-row div:nth-child(" + (i+1) + ")").append(elem);
+    var csrftoken = $("[name=csrfmiddlewaretoken]").val();
+    // Set up jQuery's AJAX functions to automatically include the CSRF token.
+    //   Copied from docs.djangoproject.com/en/dev/ref/csrf/#ajax
+    $.ajaxSetup({
+        beforeSend: function (xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
             }
-        });
+        }
+    });
 
+
+    $("#handle-input-button").click(function () {
+        // Twitter usernames cannot be longer than 15 characters.
+        var handle = $("#handle-input").val().slice(0, 15);
+        var url = '/ajax_classify/' + handle;
+        $.get(url, displayCoefficients);
+    });
+
+    $("#tweet-input-button").click(function () {
+        // Tweets cannot be longer than 280 characters.
+        var tweet = $("#tweet-input").val().slice(0, 280);
+        $.post('/ajax_classify_tweet/', {'tweet': tweet}, displayCoefficients);
     });
 
     openTab(null, "handle");
 });
 
 
+function displayCoefficients(data) {
+    var coefficients = data['coefficients'];
+    // Remove any coefficients that might already be there.
+    $(".coefficient").detach();
+    for (var i = 0; i < coefficients.length; i++) {
+        var elem = makeCoefficientElement(coefficients, i);
+        $("#img-row div:nth-child(" + (i+1) + ")").append(elem);
+    }
+}
+
+
 function makeCoefficientElement(coefficients, i) {
-    var perc = ("" + coefficients[i] * 100) + "%";
+    var perc = ("" + (coefficients[i] * 100).toFixed(1)) + "%";
     var classes = ["coefficient"];
     if (isMax(coefficients, i)) {
         classes.push("coefficient-green");
@@ -43,4 +68,11 @@ function openTab(evt, tabName) {
     $(".tablinks").removeClass("active");
     $("#tablink-" + tabName).addClass("active");
     $("#tab-" + tabName).show().addClass("active");
+}
+
+
+// Return true if an HTTP method is safe without a CSRF token
+//   Copied from docs.djangoproject.com/en/dev/ref/csrf/#ajax
+function csrfSafeMethod(method) {
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
 }
