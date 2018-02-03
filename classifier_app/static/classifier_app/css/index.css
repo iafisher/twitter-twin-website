@@ -1,0 +1,40 @@
+body {
+  padding-top: 50px;
+}
+
+#twitter-input {
+  display: block;
+  margin-bottom: 10px;
+  height: 30px;
+  padding: 3px;
+}
+
+@media screen and (min-width: 450px) {
+  #twitter-input {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 449px) {
+  #twitter-input {
+    width: 90%;
+  }
+}
+
+#twitter-input-button {
+  display: block;
+}
+
+.centered {
+  margin: 0 auto;
+}
+
+.twitter-img {
+  border-radius: 50%;
+  width: 50%;
+  margin: 0 auto;
+}
+
+#img-row {
+  margin-top: 50px;
+}
