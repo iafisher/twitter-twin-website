@@ -14,6 +14,7 @@ Developed by [Ian Fisher](https://github.com/elpez), [Conor Stuart Roe](https://
 - [Pure](https://purecss.io/): A CSS framework.
 - [jQuery](https://jquery.com/): A library of JavaScript utilities.
 - [WhiteNoise](http://whitenoise.evans.io/en/stable/): A library for serving static files with Django.
+- [favicon.ico](https://www.trumbulltimes.com/wp-content/uploads/sites/32/2015/05/TT-icon-600x600.png)
 
 ## Helpful resources
 These are some resources that we found helpful while developing this project.
